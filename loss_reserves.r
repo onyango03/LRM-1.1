@@ -1,7 +1,7 @@
 # Load the required libraries
 library(randomForest)
 library(forecast)
-library(xgboost)
+library(xgboost) 
 library(dplyr)
 library(caret)
 library(tidyverse)
@@ -13,7 +13,7 @@ claims_data <- read.csv("C:/Users/USER/Downloads/ARIMA CLAIMS/claimsdataset1.csv
 View(claims_data)
 str(claims_data)
 summary(claims_data)
-# Feature Engineering 
+# Feature Engineering to change dates into better features
 claims_data$month <- format(as.Date(paste0("01-", claims_data$Date), format = "%d-%b-%Y"), "%m")
 claims_data$year <- format(as.Date(paste0("01-", claims_data$Date), format = "%d-%b-%Y"), "%Y")
 View(claims_data)
